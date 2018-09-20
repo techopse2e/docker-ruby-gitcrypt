@@ -4,3 +4,7 @@ RUN curl -L https://github.com/AGWA/git-crypt/archive/debian/$GIT_CRYPT_VERSION.
     cd /var/tmp/git-crypt-debian-$GIT_CRYPT_VERSION && \
     make && make install PREFIX=/usr/local && \
     rm -rf /var/tmp/*
+RUN apt-get update && \
+    apt-get install -y unzip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
